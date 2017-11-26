@@ -1,26 +1,26 @@
-#libnetgear
+# libnetgear
 
 A simple library to interface with Netgear routers' SOAP API
 Inspired by [pynetgear by balloob](https://github.com/balloob/pynetgear)
 
-##Installation
+## Installation
 Currently, the install process isn't automated (e.g.: `sudo make install`)
 
 The current method is to:
--- compile libnetgear.so with `make`
--- copy the lib to your systems library install directory
+- compile libnetgear.so with `make`
+- copy the lib to your systems library install directory
 &nbsp;&nbsp;&nbsp;&nbsp;e.g.: 
 ```bash
 cp ./lib/libnetgear.so /usr/lib/libnetgear.so
 ```
--- and finally move the headers to your systems include install directory
+- and finally move the headers to your systems include install directory
 &nbsp;&nbsp;&nbsp;&nbsp;e.g.: 
 ```bash
 mkdir /usr/include/netgear
 cp ./include/* /usr/include/netgear/
 ```
 
-##Usage
+## Usage
 
 For right now, here's an example program:
 ```c++
