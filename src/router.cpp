@@ -270,15 +270,6 @@ int Router::get_traffic_meter(TrafficMeter* tm)
         std::cerr << "Error parsing response:\n" << response << std::endl;
     }
 
-    // std::stringstream detail_stream;
-    // detail_stream << std::setw(14) << " "             << std::setw(16) << "Connection Time" << std::setw(15) << "Upload/Avg."  << std::setw(15) << "Download/avg." << std::endl;
-    // detail_stream << std::setw(14) << "Today: "       << std::setw(16) << attributes[0]     << std::setw(15) << attributes[1]  << std::setw(15) << attributes[2]   << std::endl;
-    // detail_stream << std::setw(14) << "Yesterday: "   << std::setw(16) << attributes[3]     << std::setw(15) << attributes[4]  << std::setw(15) << attributes[5]   << std::endl;
-    // detail_stream << std::setw(14) << "Week: "        << std::setw(16) << attributes[6]     << std::setw(15) << attributes[7]  << std::setw(15) << attributes[8]   << std::endl;
-    // detail_stream << std::setw(14) << "Month: "       << std::setw(16) << attributes[9]     << std::setw(15) << attributes[10] << std::setw(15) << attributes[11]  << std::endl;
-    // detail_stream << std::setw(14) << "Prev. Month: " << std::setw(16) << attributes[12]    << std::setw(15) << attributes[13] << std::setw(15) << attributes[14];
-
-    // (*details) = detail_stream.str();
     (*tm) = TrafficMeter(attributes);
 
     return status;
@@ -307,9 +298,9 @@ int Router::end_config()
 
 }
 
-int Router::set_block_device(const std::string& mac, bool allow)
+int Router::set_block_device(const std::string& mac, bool block)
 {
-    std::string allow_or_block = allow ? "Allow" : "Block";
+    std::string allow_or_block = block ? "Block" : "Allow";
     char* message;
     asprintf(&message, SOAP_SET_BLOCK_DEVICE.c_str(), SESSION_ID, allow_or_block, mac);
     std::string response;
