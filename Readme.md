@@ -52,7 +52,7 @@ int main(int argc, char** argv)
     // Similar to get_attached_devices, but returns more detailed info about each device
     // Extra info includes: upload/download speed, SSID, DeviceType, QOS Priority, ...
     std::vector<Device> devices2;
-    status = router.get_attached_device2(&devices2);
+    status = router.get_attached_devices2(&devices2);
 
     // Gets the traffic meter data from the router
     TrafficMeter tm;
