@@ -8,12 +8,12 @@ Currently, the install process isn't automated (e.g.: `sudo make install`)
 
 The current method is to:
 - compile libnetgear.so with `make`
-- copy the lib to your systems library install directory
+- copy the lib to your systems library install directory  
 &nbsp;&nbsp;&nbsp;&nbsp;e.g.: 
 ```bash
 cp ./lib/libnetgear.so /usr/lib/libnetgear.so
 ```
-- and finally move the headers to your systems include install directory
+- and finally move the headers to your systems include install directory  
 &nbsp;&nbsp;&nbsp;&nbsp;e.g.: 
 ```bash
 mkdir /usr/include/netgear
